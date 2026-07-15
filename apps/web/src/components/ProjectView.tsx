@@ -1254,6 +1254,7 @@ function byokOpenCodeProviderFromConfig(
     protocol: config.apiProtocol,
     apiKey: config.apiKey.trim(),
     baseUrl: config.baseUrl,
+    model: config.model,
     ...(selectedProvider?.requiresApiKey === false ? { requiresApiKey: false } : {}),
     apiVersion:
       config.apiProtocol === 'azure'
@@ -6128,6 +6129,7 @@ export function ProjectView({
               apiKey: byokOpenCodeProvider.apiKey,
               baseUrl: byokOpenCodeProvider.baseUrl,
               apiVersion: byokOpenCodeProvider.apiVersion,
+              model: byokOpenCodeProvider.model,
             }
           : undefined;
         if (userText.length > 0) {
